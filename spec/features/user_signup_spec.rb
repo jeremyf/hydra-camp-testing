@@ -9,6 +9,6 @@ describe 'user signup' do
       fill_in('Password', with: 'myrealpassword')
       click_button("Sign in")
     end
-    # Then I should see an error saying I am not registered
+    page.should have_selector('div', text: 'Invalid email or password.')
   end
 end
